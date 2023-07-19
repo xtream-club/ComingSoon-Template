@@ -1,0 +1,221 @@
+/* Estilos generales para el cuerpo del documento */
+body {
+  margin: 0; /* Elimina el margen exterior */
+  padding: 0; /* Elimina el relleno interior */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente del texto */
+  background: linear-gradient(to right, #71c9ce, #238174); /* Degradado de colores de fondo */
+  display: flex; /* Utiliza el modelo de caja flexible */
+  justify-content: center; /* Centra horizontalmente los elementos flexibles */
+  align-items: center; /* Centra verticalmente los elementos flexibles */
+  min-height: 100vh; /* Establece una altura mínima del viewport */
+  color: #FFFFFF; /* Color de texto en blanco */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+  text-align: center; /* Alineación del contenido del contenedor al centro */
+  padding: 30px; /* Espaciado interno del contenedor */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Sombra más suave */
+  border-radius: 15px; /* Bordes redondeados */
+  opacity: 0; /* Inicialmente el contenedor no es visible */
+  transform: translateY(40px); /* Mueve el contenedor hacia abajo 40px */
+  animation: fadeInUp 1s ease-in-out forwards; /* Animación de aparición */
+  max-width: 400px; /* Ancho máximo del contenedor */
+  width: 90%; /* Ancho del contenedor en porcentaje */
+}
+
+/* Estilos para la imagen dentro del contenedor */
+.container img {
+  width: 150px; /* Ancho de la imagen */
+  height: 150px; /* Altura de la imagen */
+  border-radius: 50%; /* Bordes redondeados para formar un círculo */
+  object-fit: cover; /* Ajusta la imagen para cubrir el área */
+  margin-bottom: 20px; /* Espaciado inferior */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+  background-color: #71c9ce; /* Color de fondo del logo */
+  /* Agregar animación al logo */
+  transition: transform 0.4s ease; /* Transición de transformación */
+}
+
+/* Estilos para la imagen al pasar el cursor sobre ella */
+.container img:hover {
+  transform: scale(1.08); /* Efecto de escala al pasar el cursor sobre el logo */
+}
+
+/* Estilos para el título dentro del contenedor */
+.container h1 {
+  font-size: 42px; /* Tamaño del título */
+  color: #71c9ce; /* Color de acento para el título */
+  margin-bottom: 15px; /* Espaciado inferior */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para resaltar el título */
+}
+
+/* Estilos para el párrafo dentro del contenedor */
+.container p {
+  font-size: 20px; /* Tamaño del texto */
+  color: #CCCCCC; /* Un gris claro para el texto secundario */
+  line-height: 1.6; /* Altura de línea */
+  margin-bottom: 25px; /* Espaciado inferior */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra para resaltar el texto */
+}
+
+/* Estilos para la barra de progreso */
+.progress-bar {
+  position: relative; /* Establece la posición relativa para poder posicionar el porcentaje de carga */
+  width: 100%; /* Ancho de la barra de progreso */
+  background-color: #333333; /* Un gris más oscuro para la barra de progreso */
+  height: 20px; /* Altura de la barra de progreso */
+  border-radius: 10px; /* Bordes redondeados */
+  overflow: hidden; /* Oculta el contenido que excede la barra de progreso */
+  margin-bottom: 15px; /* Espaciado inferior */
+}
+
+/* Estilos para el progreso de la barra */
+.progress {
+  width: 0; /* Inicialmente sin progreso */
+  height: 100%; /* Altura del progreso */
+  background-color: #71c9ce; /* Color de acento para la barra de progreso */
+  border-radius: 10px; /* Bordes redondeados */
+  transition: width 0.5s ease; /* Transición para suavizar el progreso */
+  animation: progressAnimation 4s infinite; /* Animación para el progreso */
+}
+
+/* Estilo para mostrar el porcentaje de carga */
+.progress-percentage {
+  position: absolute; /* Establece la posición absoluta para superponer el porcentaje de carga */
+  top: 50%; /* Centra verticalmente el porcentaje de carga */
+  left: 50%; /* Centra horizontalmente el porcentaje de carga */
+  transform: translate(-50%, -50%); /* Centra el porcentaje de carga exactamente en el centro */
+  color: white; /* Color de texto en blanco */
+  font-size: 16px; /* Tamaño del texto */
+  padding: 5px 10px; /* Espaciado interno del elemento */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: transparent; /* Fondo semi-transparente para mayor legibilidad */
+}
+
+/* Animación de aparición */
+@keyframes fadeInUp {
+  to {
+    opacity: 1; /* Opacidad completa */
+    transform: translateY(0); /* Sin desplazamiento vertical */
+  }
+}
+
+/* Media query para dispositivos más pequeños */
+@media screen and (max-width: 480px) {
+  .container img {
+    width: 130px; /* Ancho de la imagen para dispositivos pequeños */
+    height: 130px; /* Altura de la imagen para dispositivos pequeños */
+  }
+
+  .container h1 {
+    font-size: 36px; /* Tamaño del título para dispositivos pequeños */
+  }
+
+  .container p {
+    font-size: 16px; /* Tamaño del texto para dispositivos pequeños */
+  }
+}
+
+/* Media query para dispositivos más grandes */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 500px; /* Ancho máximo del contenedor para dispositivos más grandes */
+  }
+}
+
+/* Animación para el progreso */
+@keyframes progressAnimation {
+  0% {
+    background-color: #71c9ce; /* Color inicial del progreso */
+  }
+  50% {
+    background-color: #238174; /* Color a mitad del progreso */
+  }
+  100% {
+    background-color: #71c9ce; /* Color al final del progreso */
+  }
+}
+
+/* Estilos para la tarjeta de tiempo restante */
+.card {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para la tarjeta */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  color: #FFFFFF; /* Color de texto en blanco */
+  margin-top: 30px; /* Espaciado superior */
+  padding: 15px; /* Espaciado interno de la tarjeta */
+  text-align: center; /* Alineación del contenido al centro */
+}
+
+/* Estilos para el título de la tarjeta */
+.card-title {
+  font-size: 24px; /* Tamaño del título */
+  font-weight: bold; /* Texto en negrita */
+  margin-bottom: 8px; /* Espaciado inferior */
+  color: #71c9ce; /* Color de acento para el título de la tarjeta */
+}
+
+/* Estilos para el tiempo restante dentro de la tarjeta */
+.time-remaining {
+  display: flex; /* Modelo de caja flexible para alinear elementos en línea */
+  justify-content: space-between; /* Espacio uniforme entre los elementos */
+}
+
+/* Estilos para los elementos de tiempo (días, horas, minutos) */
+.time-item {
+  flex-basis: 24%; /* Ancho de los elementos de tiempo */
+}
+
+/* Estilos para el tiempo restante */
+.time {
+  display: block; /* Elemento en bloque */
+  font-size: 30px; /* Tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  color: #71c9ce; /* Color de acento para el tiempo restante */
+}
+
+/* Estilos para las etiquetas de tiempo (Días, Horas, Minutos) */
+.time-label {
+  display: block; /* Elemento en bloque */
+  font-size: 14px; /* Tamaño del texto */
+  color: #CCCCCC; /* Un gris claro para el texto secundario */
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-icons {
+  margin-top: 30px; /* Espaciado superior */
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-icon {
+  display: inline-block; /* Elemento en línea */
+  margin-right: 8px; /* Espaciado derecho */
+  font-size: 24px; /* Tamaño del icono */
+  color: #FFFFFF; /* Color de texto en blanco */
+  background-color: #71c9ce; /* Color de acento para los iconos de redes sociales */
+  border-radius: 50%; /* Bordes redondeados para formar un círculo */
+  width: 36px; /* Ancho del icono */
+  height: 36px; /* Altura del icono */
+  line-height: 36px; /* Alineación vertical del texto del icono */
+  text-align: center; /* Alineación del contenido al centro */
+  transition: background-color 0.3s ease; /* Transición para cambiar el color al pasar el cursor */
+}
+
+/* Estilos al pasar el cursor sobre los iconos de redes sociales */
+.social-icon:hover {
+  background-color: #238174; /* Color de acento más oscuro al pasar el cursor */
+}
+
+/* Estilos para cada icono de red social */
+.social-icon i.fa-facebook-f {
+  color: #3b5998; /* Color para el ícono de Facebook */
+}
+
+.social-icon i.fa-twitter {
+  color: #1da1f2; /* Color para el ícono de Twitter */
+}
+
+.social-icon i.fa-instagram {
+  color: #e4405f; /* Color para el ícono de Instagram */
+}

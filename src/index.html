@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página en Construcción</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Contenedor principal -->
+  <div class="container" data-progress="80" data-speed="5" data-show-card="true" data-target="2024-07-28">
+    <img src="logo.png" alt="Logo">
+    <h1 class="title">Página en Construcción</h1>
+    
+    <p class="description">Estamos trabajando en mejorar nuestro sitio web</p>
+    <!-- Barra de progreso -->
+    <div class="progress-bar">
+      <div class="progress"></div>
+      <div class="progress-percentage">0%</div>
+    </div>
+
+    <!-- Tarjeta (card) para mostrar tiempo restante -->
+    <div class="card" id="time-card">
+      <div class="card-title">Lanzamiento</div>
+      <div class="card-content">
+        <div class="time-remaining">
+          <div class="time-item">
+            <span class="time" id="days-counter">0</span>
+            <span class="time-label">Días</span>
+          </div>
+          <div class="time-item">
+            <span class="time" id="hours-counter">0</span>
+            <span class="time-label">Horas</span>
+          </div>
+          <div class="time-item">
+            <span class="time" id="minute-counter">0</span>
+            <span class="time-label">Minutos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Iconos de redes sociales -->
+    <div class="social-icons">
+      <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
